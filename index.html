@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>银行卡号生成器</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>银行卡号生成器</h1>
+    </header>
+    <main>
+        <form id="card-form">
+            <label for="pattern">输入卡号模式:</label>
+            <input type="text" id="pattern" name="pattern" required>
+            <button type="submit">生成卡号</button>
+        </form>
+        <div id="results">
+            <p>生成的卡号:</p >
+            <textarea id="generated-numbers" readonly></textarea>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
