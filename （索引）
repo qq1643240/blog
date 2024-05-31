@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="styles.css">
+<link rel="shortcut icon" href="favicon.ico">
+<title>银行卡号生成器</title>
+<style>
+    div:where(.swal2-container) div:where(.swal2-popup) {
+        width: 6em!important;
+        padding: .6em!important;
+    }
+    div:where(.swal2-container) h2:where(.swal2-title) {
+        font-size: 1em!important;
+        padding: 0!important;
+    }
+</style>
+</head>
+<body>
+<main>
+<section class="generator">
+
+<h1>银行卡号生成器 - 鑫斌网络传媒出品</h1>
+</h1><p id="prompt-info">根据输入的数字、字母及 * 号（同一字母表示相同数字，* 号表示任意数字）</h1>
+</h1><p id="prompt-info">生成满足 Luhn 算法的银行卡号，用于卡号定制提前算号。<a href="https://ka.xbwlcm.com/about" target="_blank"> 查看使用说明 </a></li></h1>
+</h1><p id="prompt-info">此工具仅提供于靓号爱好者，银行卡号生成器手机端软件正式上线。 <a href="https://ka.xbwlcm.com/app" target="_blank"> 点击软件下载 </a></li></h1>
+
+<div class="input-wrapper">
+<input type="text" id="inputField" placeholder="请输入卡号，如 6214 8800 0*aa bbbb" autofocus>
+<button id="generateButton">清空</button>
+
+</div>
+<div class="result-info">
+<p class="result-p"><span id="validText">已输入有效位数：</span><span id="validCount">0</span></p>
+<p class="result-p"><span id="countText">生成的卡号数量：</span><span id="count">0</span></p>
+</div>
+<button id="copyButton">复制</button>
+<div id="result"></div>
+</section>
+</main>
+
+    <!-- 底部 · 代码开始 -->
+    <footer>
+        <p> <a href="https://beian.miit.gov.cn" target="_blank" href="/"> 备案号：苏ICP备2022013009号 </a>  
+            <a href="http://xinbin.xbwlcm.com" target="_blank" href="/"> 鑫斌网络 · 版权所有 </a> <p>  
+        <p> Copyright © 2013-2024 <a href="https://xb.xbwlcm.com" target="_blank" href="/"> XINBIN </a> All Rights Reserved </a> </p>
+    </footer>
+    <!-- 底部 · 代码结束 -->
+
+<script>
+    document.getElementById("copyButton").addEventListener("click", function() {
+        var resultText = document.getElementById("result").innerText;
+        var tempTextArea = document.createElement("textarea");
+        tempTextArea.value = resultText;
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempTextArea);
+        Swal.fire({title: '复制成功',showConfirmButton: false,timer: 1000})});
+</script>
+<script src="sweetalert2.all.min.js"></script>
+<script src="scripts.js"></script>
+<script src="rocket-loader.min.js">
+</script>
+</body>
+</html>
